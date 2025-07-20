@@ -30,4 +30,24 @@ const agLibraryRootFolder = sqliteTable("AgLibraryRootFolder", {
   id_local: integer("id_local").primaryKey(),
 });
 
-export { agPhotoProperty, adobeImages, agLibraryFile, agLibraryFolder, agLibraryRootFolder };
+const agSearchablePhotoProperty = sqliteTable("AgSearchablePhotoProperty", {
+  id_local: integer("id_local").primaryKey(),
+  internalValue: text("internalValue"),
+  photo: integer("photo"),
+  propertySpec: integer("propertySpec"),
+});
+
+const agPhotoPropertySpec = sqliteTable("AgPhotoPropertySpec", {
+  id_local: integer("id_local").primaryKey(),
+  key: text("key"),
+});
+
+export {
+  agPhotoProperty,
+  adobeImages,
+  agLibraryFile,
+  agLibraryFolder,
+  agLibraryRootFolder,
+  agSearchablePhotoProperty,
+  agPhotoPropertySpec,
+};

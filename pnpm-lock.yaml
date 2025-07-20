@@ -11,6 +11,9 @@ importers:
       drizzle-orm:
         specifier: 0.44.3
         version: 0.44.3(better-sqlite3@12.2.0)(sql.js@1.13.0)(sqlite3@5.1.7)
+      luadata:
+        specifier: 1.0.3
+        version: 1.0.3
     devDependencies:
       '@changesets/cli':
         specifier: 2.29.5
@@ -18,6 +21,9 @@ importers:
       '@grby/eslint-config':
         specifier: 1.0.2
         version: 1.0.2(eslint@9.31.0)
+      '@types/node':
+        specifier: 24.0.15
+        version: 24.0.15
       changesets:
         specifier: 1.0.2
         version: 1.0.2
@@ -60,6 +66,9 @@ importers:
       eslint-plugin-vitest:
         specifier: 0.5.4
         version: 0.5.4(eslint@9.31.0)(typescript@5.8.3)
+      prettier:
+        specifier: 3.6.2
+        version: 3.6.2
       typescript:
         specifier: 5.8.3
         version: 5.8.3
@@ -257,6 +266,9 @@ packages:
 
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
+
+  '@types/node@24.0.15':
+    resolution: {integrity: sha512-oaeTSbCef7U/z7rDeJA138xpG3NuKc64/rZ2qmUFkFJmnMsAPaluIifqyWd8hSSMxyP9oie3dLAqYPblag9KgA==}
 
   '@typescript-eslint/eslint-plugin@8.37.0':
     resolution: {integrity: sha512-jsuVWeIkb6ggzB+wPCsR4e6loj+rM72ohW6IBn2C+5NCvfUVY8s33iFPySSVXqtm5Hu29Ne/9bnA0JmyLmgenA==}
@@ -1500,6 +1512,9 @@ packages:
     resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
     engines: {node: '>=10'}
 
+  luadata@1.0.3:
+    resolution: {integrity: sha512-xmIcdamkrJb/Fd84ui0/V4Ycvxt3HLSmtVQwM42J3EfFiD4EuFqXNWSov8wyX5gYSjU/cxfvd933/SJFxJBozw==}
+
   make-fetch-happen@9.1.0:
     resolution: {integrity: sha512-+zopwDy7DNknmwPQplem5lAZX/eCOzSvSNNcSKm5eVwTkOBzoktEfXsa9L23J/GIRhxRsaxzkPEhrJEpE2F4Gg==}
     engines: {node: '>= 10'}
@@ -2127,6 +2142,9 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
+  undici-types@7.8.0:
+    resolution: {integrity: sha512-9UJ2xGDvQ43tYyVMpuHlsgApydB8ZKfVYTsLDhXkFL/6gfkp+U8xTGdh8pMJv1SpZna0zxG1DwsKZsreLbXBxw==}
+
   unique-filename@1.1.1:
     resolution: {integrity: sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==}
 
@@ -2491,6 +2509,10 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@types/node@12.20.55': {}
+
+  '@types/node@24.0.15':
+    dependencies:
+      undici-types: 7.8.0
 
   '@typescript-eslint/eslint-plugin@8.37.0(@typescript-eslint/parser@8.37.0(eslint@9.31.0)(typescript@5.8.3))(eslint@9.31.0)(typescript@5.8.3)':
     dependencies:
@@ -3882,6 +3904,8 @@ snapshots:
       yallist: 4.0.0
     optional: true
 
+  luadata@1.0.3: {}
+
   make-fetch-happen@9.1.0:
     dependencies:
       agentkeepalive: 4.6.0
@@ -4656,6 +4680,8 @@ snapshots:
       has-bigints: 1.1.0
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
+
+  undici-types@7.8.0: {}
 
   unique-filename@1.1.1:
     dependencies:

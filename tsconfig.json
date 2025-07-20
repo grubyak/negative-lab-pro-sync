@@ -74,10 +74,10 @@
     "resolveJsonModule": true,
 
     // include custom global types and default types
-    "typeRoots": ["types", "node_modules/@types"]
+    "typeRoots": ["types", "node_modules/@types"],
 
     // includes global types for the execution environment
-    // "types": []
+    "types": ["node"]
   },
   "include": ["src"]
 }
