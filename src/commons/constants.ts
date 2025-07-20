@@ -1,0 +1,11 @@
+const RAW_EXTENSION = "CR3";
+const SIDECAR_EXTENSION = "nlp.json";
+const NLP_VERSION = "3.0.2";
+
+const CONSTANTS = {
+  NLP_VERSION,
+  RAW_EXTENSION,
+  SIDECAR_EXTENSION,
+};
+
+export { CONSTANTS };

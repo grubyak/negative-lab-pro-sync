@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    // allow js files in compilation
+    "allowJs": false,
+
+    // allow default imports from modules without a default export
+    "allowSyntheticDefaultImports": true,
+
+    // insert 'use strict' in emitted files
+    "alwaysStrict": true,
+
+    // generate .d.ts declaration files
+    "declaration": true,
+
+    // use es module interoperability (import/export compatibility)
+    "esModuleInterop": true,
+
+    // treat missing 'this' type as an error
+    "noImplicitThis": true,
+
+    // error on expressions and declarations with an implied 'any' type
+    "noImplicitAny": true,
+
+    // do not emit output
+    "noEmit": true,
+
+    // prevent emit if there are type errors
+    "noEmitOnError": true,
+
+    // report errors on unused locals
+    "noUnusedLocals": true,
+
+    // do not report errors on unused function params
+    "noUnusedParameters": false,
+
+    // disable error reporting for unreachable code
+    "allowUnreachableCode": false,
+
+    // enable inter-file checks for js files
+    "checkJs": false,
+
+    // enable strict type checking
+    "strict": true,
+
+    // check binding/call/apply argument types
+    "strictBindCallApply": true,
+
+    // check function parameter bivariance
+    "strictFunctionTypes": true,
+
+    // check nullable values
+    "strictNullChecks": true,
+
+    // do not enforce exact optional properties
+    "exactOptionalPropertyTypes": false,
+
+    // enable symlink preservation (monorepo-friendly)
+    "preserveSymlinks": true,
+
+    // do not block compilation on missing types
+    "skipLibCheck": true,
+
+    // resolve imports using node's algorithm
+    "moduleResolution": "node",
+
+    // emit as esnext modules (for esm output)
+    "module": "esnext",
+
+    // target modern js features
+    "target": "esnext",
+
+    // resolve .json imports
+    "resolveJsonModule": true,
+
+    // include custom global types and default types
+    "typeRoots": ["types", "node_modules/@types"]
+
+    // includes global types for the execution environment
+    // "types": []
+  },
+  "include": ["src"]
+}
