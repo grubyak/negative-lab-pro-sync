@@ -1,7 +1,17 @@
 import { serializer as luadata } from "luadata";
 
+const convertMaps = (data: unknown): unknown => {
+  if (data instanceof Map || (data && typeof data === "object" && !Array.isArray(data))) {
+    const entries = data instanceof Map ? Array.from(data.entries()) : Object.entries(data);
+
+    return entries.reduce((result, [key, value]) => ({ ...result, [key]: convertMaps(value) }), {});
+  }
+
+  return Array.isArray(data) ? data.map(convertMaps) : data;
+};
+
 const parse = <Type = unknown>(text: string | null): Type =>
-  luadata.unserialize((text ?? "").trim().replace(/^t\s*=\s*/, ""));
+  convertMaps(luadata.unserialize((text ?? "").trim().replace(/^t\s*=\s*/, "")) as unknown) as Type;
 
 const stringify = (obj: unknown) =>
   luadata

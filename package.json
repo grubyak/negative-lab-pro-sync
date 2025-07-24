@@ -15,7 +15,7 @@
     "nlp-sync": "./src/index.ts"
   },
   "scripts": {
-    "lint": "eslint src",
+    "lint": "eslint src && npx tsc --noEmit",
     "dev": "./src/index.ts"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "@changesets/cli": "2.29.5",
     "@grby/eslint-config": "1.0.2",
     "@types/node": "24.0.15",
+    "bun-types": "1.2.19",
     "changesets": "1.0.2",
     "eslint": "9.31.0",
     "eslint-config-prettier": "10.1.8",
@@ -43,5 +44,8 @@
     "prettier": "3.6.2",
     "typescript": "5.8.3",
     "typescript-eslint": "8.37.0"
+  },
+  "engines": {
+    "bun": "1.2.18"
   }
 }

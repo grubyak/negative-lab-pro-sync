@@ -5,6 +5,7 @@ export default [
   {
     languageOptions: {
       globals: {
+        Bun: "readonly",
         process: "readonly",
       },
     },

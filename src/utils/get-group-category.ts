@@ -1,6 +1,6 @@
-import type { NegativeLabProGroup } from "../types";
+import type { AdjustmentsGroup } from "../types";
 
-const getGroupCategory = (value: string | null): NegativeLabProGroup => {
+const getGroupCategory = (value: string | null): AdjustmentsGroup | undefined => {
   if (
     value?.includes("selectedPreset") ||
     value?.includes("toneProfile") ||
@@ -17,8 +17,6 @@ const getGroupCategory = (value: string | null): NegativeLabProGroup => {
   if (value?.includes("blackPointOrigin")) {
     return "channel";
   }
-
-  return "unknown";
 };
 
 export { getGroupCategory };

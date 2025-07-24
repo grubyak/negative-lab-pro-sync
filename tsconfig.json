@@ -62,7 +62,7 @@
     "skipLibCheck": true,
 
     // resolve imports using node's algorithm
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
 
     // emit as esnext modules (for esm output)
     "module": "esnext",
@@ -74,10 +74,10 @@
     "resolveJsonModule": true,
 
     // include custom global types and default types
-    "typeRoots": ["types", "node_modules/@types"],
+    "typeRoots": ["./node_modules/@types", "./node_modules/bun-types"],
 
     // includes global types for the execution environment
-    "types": ["node"]
+    "types": ["node", "bun"]
   },
   "include": ["src"]
 }

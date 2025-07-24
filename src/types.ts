@@ -2,20 +2,14 @@ import type { drizzle } from "drizzle-orm/bun-sqlite";
 
 type DB = ReturnType<typeof drizzle>;
 
-type Row = {
+type Photo = {
   absolutePath: string | null;
   baseName: string | null;
   extension: string | null;
-  id_global: string | null;
-  internalValue: string | null;
   pathFromRoot: string | null;
-  nlpKey: string | null;
-  nlpValue: string | null;
 };
 
-type Photo = Pick<Row, "baseName" | "extension" | "absolutePath">;
-
-type NegativeLabProKey =
+type GeneralEntriesKey =
   | "nlpConverted"
   | "nlpVersion"
   | "nlpSource"
@@ -49,14 +43,16 @@ type NegativeLabProKey =
   | "nlpDevDilution"
   | "nlpDevMethod"
   | "nlpDevTimeTemp"
-  | "nlpDevelopmentNotes"
-  | (string & Record<never, never>);
+  | "nlpDevelopmentNotes";
 
-type NegativeLabProProps = Partial<Record<NegativeLabProKey, string | null>>;
-type NegativeLabProGroup = "core" | "smart" | "channel" | "unknown";
+type AdjustmentsGroup = "core" | "smart" | "channel";
+type GeneralEntries = Record<GeneralEntriesKey, string>;
+type AdjustmentsEntries = Record<AdjustmentsGroup, string>;
 
-type NegativeLabProEntry = {
-  file: Pick<Row, "baseName" | "extension" | "pathFromRoot">;
-} & Record<NegativeLabProGroup, string | null> & { general: NegativeLabProProps };
+type Sidecar = {
+  photo: Photo;
+  general: GeneralEntries;
+  adjustments: AdjustmentsEntries;
+};
 
-export { DB, Row, Photo, NegativeLabProKey, NegativeLabProProps, NegativeLabProGroup, NegativeLabProEntry };
+export { DB, Photo, GeneralEntriesKey, GeneralEntries, AdjustmentsEntries, AdjustmentsGroup, Sidecar };

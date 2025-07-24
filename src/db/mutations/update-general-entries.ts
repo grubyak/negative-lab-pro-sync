@@ -1,9 +1,9 @@
 import { and, eq } from "drizzle-orm";
 import { agPhotoPropertySpec, agSearchablePhotoProperty } from "../../schema";
-import type { DB, NegativeLabProProps, Photo } from "../../types";
+import type { DB, GeneralEntries, Photo } from "../../types";
 import { getPhotoId } from "../queries/get-photo-id";
 
-const updateNegativeLabProEntries = (db: DB, photo: Photo, nlp: NegativeLabProProps) => {
+const updateGeneralEntries = (db: DB, photo: Photo, general: GeneralEntries, go: boolean) => {
   const photoId = getPhotoId(db, photo);
 
   if (!photoId) {
@@ -13,7 +13,7 @@ const updateNegativeLabProEntries = (db: DB, photo: Photo, nlp: NegativeLabProPr
 
   console.debug(`- processing ${photo.baseName}`);
 
-  Object.entries(nlp).forEach(([key, value]) => {
+  Object.entries(general).forEach(([key, value]) => {
     const spec = db
       .select({ id: agPhotoPropertySpec.id_local })
       .from(agPhotoPropertySpec)
@@ -37,10 +37,12 @@ const updateNegativeLabProEntries = (db: DB, photo: Photo, nlp: NegativeLabProPr
       } else {
         console.debug(`  - updating "${key}": "${existing.internalValue}" -> "${value}"`);
 
-        db.update(agSearchablePhotoProperty)
-          .set({ internalValue: value })
-          .where(eq(agSearchablePhotoProperty.id_local, existing.id))
-          .run();
+        if (go) {
+          db.update(agSearchablePhotoProperty)
+            .set({ internalValue: value })
+            .where(eq(agSearchablePhotoProperty.id_local, existing.id))
+            .run();
+        }
       }
     } else {
       console.log(`  - property "${key}" does not exist`);
@@ -48,4 +50,4 @@ const updateNegativeLabProEntries = (db: DB, photo: Photo, nlp: NegativeLabProPr
   });
 };
 
-export { updateNegativeLabProEntries };
+export { updateGeneralEntries };
