@@ -1,6 +1,5 @@
 import { drizzle } from "drizzle-orm/bun-sqlite";
-import { getCatalogName } from "./get-catalog-name";
 
-const openCatalog = () => drizzle(getCatalogName());
+const openCatalog = (catalog: string) => drizzle(catalog);
 
 export { openCatalog };

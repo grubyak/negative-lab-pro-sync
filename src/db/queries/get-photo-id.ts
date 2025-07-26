@@ -13,8 +13,8 @@ const getPhotoId = (db: DB, photo: Photo) =>
       and(
         eq(agLibraryFile.baseName, photo.baseName!),
         eq(agLibraryFile.extension, photo.extension!),
-        eq(agLibraryRootFolder.absolutePath, photo.absolutePath!),
         eq(agLibraryFolder.pathFromRoot, photo.pathFromRoot!),
+        // eq(agLibraryRootFolder.absolutePath, photo.absolutePath!),
       ),
     )
     .get()?.photoId;

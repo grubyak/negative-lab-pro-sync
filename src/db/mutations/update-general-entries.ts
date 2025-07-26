@@ -11,7 +11,7 @@ const updateGeneralEntries = (db: DB, photo: Photo, general: GeneralEntries, go:
     return;
   }
 
-  console.debug(`- processing ${photo.baseName}`);
+  console.debug(`- processing general entries for ${photo.baseName}`);
 
   Object.entries(general).forEach(([key, value]) => {
     const spec = db

@@ -15,11 +15,11 @@ const parse = <Type = unknown>(text: string | null): Type =>
 
 const stringify = (obj: unknown) =>
   luadata
-    .serialize(obj, { indent: "\\n\\t" })
-    .replace(/(\\n\\t){2}/g, "\\n\\t\\t")
+    .serialize(obj, { indent: "\n\t" })
+    .replace(/(\n\t){2}/g, "\n\t\t")
     .replace(/^/, "t = ")
-    .replace(/}$/, "\\n}\\n")
-    .replaceAll("\n", "");
+    .replace(/}$/, "\n}\n")
+    .replaceAll("\n\n", "\n");
 
 const lua = { parse, stringify };
 
