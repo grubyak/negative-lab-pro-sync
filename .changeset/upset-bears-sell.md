@@ -1,5 +1,5 @@
 ---
-"negative-lab-pro-sync": patch
+"@grby/nlpx": patch
 ---
 
 first version of complete sync
