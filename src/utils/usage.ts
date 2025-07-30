@@ -1,30 +1,40 @@
+import { CONSTANTS } from "../commons/constants";
+
+const x = CONSTANTS.PARAMS;
+
 const usage = () => {
-  console.debug = process.argv.includes("--verbose") ? console.debug : () => undefined;
+  const go = process.argv.includes(x.GO);
+  const updateCatalog = process.argv.includes(x.UPDATE_CATALOG);
+  const updateSidecar = process.argv.includes(x.UPDATE_SIDECAR);
+  const all = process.argv.includes(x.ALL);
+  const catalog = process.argv.find((item) => item.startsWith(`${x.CATALOG}=`))?.split("=")[1] ?? null;
+  const help =
+    process.argv.includes(x.HELP) || !catalog || (updateCatalog && updateSidecar) || (!updateCatalog && !updateSidecar);
 
-  const help = process.argv.includes("--help");
-  const go = process.argv.includes("--go");
-  const updateCatalog = process.argv.includes("--update-catalog");
-  const updateSidecar = process.argv.includes("--update-sidecar");
-  const catalog = process.argv.find((item) => item.startsWith("--catalog="))?.split("=")[1] ?? null;
-
-  if (help || !catalog || (updateCatalog && updateSidecar) || (!updateCatalog && !updateSidecar)) {
+  if (help) {
     console.log(`
 usage:
-  nlp-sync --update-catalog --catalog=<path> [--go] [--verbose]
-  nlp-sync --update-sidecar --catalog=<path> [--go] [--verbose]
+  ${CONSTANTS.APP} ${x.UPDATE_SIDECAR} ${x.CATALOG}<path> [${x.GO}] [${x.VERBOSE}] [${x.ALL}]
+  ${CONSTANTS.APP} ${x.UPDATE_CATALOG} ${x.CATALOG}<path> [${x.GO}] [${x.VERBOSE}]
 
 options:
-  --update-catalog     sync sidecar files into the catalog
-  --update-sidecar     generate sidecar files from the catalog
-  --catalog=<path>     path to lightroom catalog (.lrcat)
-  --go                 perform the operation (without this it's a dry-run)
-  --verbose            verbose output
-  --help               show this help message
+  ${x.ALL}              applicable to ${x.UPDATE_SIDECAR}, include all nlp files from the catalog (default: current folder and subfolders)
+  ${x.UPDATE_SIDECAR}   sync: .lrcat -> .${CONSTANTS.SIDECAR_EXTENSION}
+  ${x.UPDATE_CATALOG}   sync: current folder .${CONSTANTS.SIDECAR_EXTENSION} -> .lrcat
+  ${x.CATALOG}=<path>   absolute path of lightroom catalog
+  ${x.GO}               apply changes (default: dry-run)
+  ${x.VERBOSE}          verbose output
+
+note:
+  tested only with negative lab pro ${CONSTANTS.NLP_VERSION}
 `);
+
     process.exit(1);
   }
 
-  return { catalog, go, updateCatalog, updateSidecar };
+  console.debug = process.argv.includes(x.VERBOSE) ? console.debug : () => undefined;
+
+  return { all, catalog, go, updateCatalog, updateSidecar };
 };
 
 export { usage };

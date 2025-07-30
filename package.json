@@ -1,25 +1,30 @@
 {
-  "name": "negative-lab-pro-sync",
+  "name": "@grby/nlpx",
   "version": "1.0.0",
-  "description": "negative lab pro sync",
+  "description": "two way sync for negative lab pro and lightroom",
   "type": "module",
   "license": "MIT",
   "keywords": [
-    "eslint"
+    "nlp",
+    "negative-lab-pro",
+    "lightroom",
+    "catalog",
+    "sidecar",
+    "sync"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/grubyak/negative-lab-pro-sync"
   },
   "bin": {
-    "nlp-sync": "./src/index.ts"
+    "nlpx": "./src/index.ts"
   },
   "scripts": {
     "lint": "eslint src && npx tsc --noEmit",
     "dev": "./src/index.ts"
   },
   "dependencies": {
-    "drizzle-orm": "0.44.3",
+    "drizzle-orm": "0.44.4",
     "luadata": "1.0.3"
   },
   "devDependencies": {
@@ -28,7 +33,7 @@
     "@types/node": "24.1.0",
     "bun-types": "1.2.19",
     "changesets": "1.0.2",
-    "eslint": "9.31.0",
+    "eslint": "9.32.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
