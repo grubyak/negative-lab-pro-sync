@@ -14,7 +14,7 @@ const { go, catalog, updateCatalog, updateSidecar, all } = usage();
 const db = openCatalog(catalog);
 const cwd = `${process.cwd()}/`;
 
-console.debug("= lightroom catalog", catalog);
+console.debug("= lightroom catalog:", catalog);
 
 if (updateSidecar) {
   console.debug(`= syncing: .lrcat -> .${CONSTANTS.SIDECAR_EXTENSION}`, all ? "" : `starting from ${cwd}`);

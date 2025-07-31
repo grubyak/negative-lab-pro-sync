@@ -21,6 +21,6 @@ const CONSTANTS = {
   PARAMS,
   RAW_EXTENSION,
   SIDECAR_EXTENSION,
-};
+} as const;
 
 export { CONSTANTS };
