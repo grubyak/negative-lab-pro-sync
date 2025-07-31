@@ -14,8 +14,8 @@ const usage = () => {
   if (help) {
     console.log(`
 usage:
-  ${CONSTANTS.APP} ${x.UPDATE_SIDECAR} ${x.CATALOG}<path> [${x.GO}] [${x.VERBOSE}] [${x.ALL}]
-  ${CONSTANTS.APP} ${x.UPDATE_CATALOG} ${x.CATALOG}<path> [${x.GO}] [${x.VERBOSE}]
+  ${CONSTANTS.APP} ${x.UPDATE_SIDECAR} ${x.CATALOG}=<path> [${x.GO}] [${x.VERBOSE}] [${x.ALL}]
+  ${CONSTANTS.APP} ${x.UPDATE_CATALOG} ${x.CATALOG}=<path> [${x.GO}] [${x.VERBOSE}]
 
 options:
   ${x.ALL}              applicable to ${x.UPDATE_SIDECAR}, include all nlp files from the catalog (default: current folder and subfolders)

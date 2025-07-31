@@ -1,4 +1,4 @@
-# negative-lab-pro-sync (nlpx)
+# @grby/nlpx
 
 ### problem
 
@@ -8,7 +8,7 @@
 
 `nlpx` is a two‑way sync tool for `negative lab pro` and the `lightroom classic` catalog.
 
-It synchronizes sidecar files (`.nlp.json`), allowing you to:
+It synchronizes sidecar files (`.nlpx.json`), allowing you to:
 
 - restore negative adjustments back into the catalog at any time
 - move or reorganize files without losing nlp data
@@ -60,7 +60,7 @@ $ nlpx --update-sidecar --catalog=/Users/xyz/a/b/c/my-catalog.lrcat --verbose --
 $ nlpx --update-sidecar --catalog=/Users/xyz/a/b/c/my-catalog.lrcat --verbose --all --go
 $ ls -1
 aaabbbccc.CR3
-aaabbbccc.nlp.json
+aaabbbccc.nlpx.json
 ```
 
 ### sync: sidecars -> catalog

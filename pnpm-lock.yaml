@@ -19,8 +19,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@grby/eslint-config':
-        specifier: 1.0.2
-        version: 1.0.2(eslint@9.32.0)
+        specifier: 1.0.3
+        version: 1.0.3(eslint@9.32.0)
       '@types/node':
         specifier: 24.1.0
         version: 24.1.0
@@ -190,10 +190,10 @@ packages:
   '@gar/promisify@1.1.3':
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
 
-  '@grby/eslint-config@1.0.2':
-    resolution: {integrity: sha512-azJCdTWvgh3I4V5Tg4sEX3hrh8cedS/nn0a2+zJnVSs3GKoYWfiAwURNnrObPARhYjlJvU8cx3DawK0gCO1Nag==}
+  '@grby/eslint-config@1.0.3':
+    resolution: {integrity: sha512-/niriBpmgAeQgv7+tT+bccv0dH2jo0PWkFKNoo4BkNcCZOvc92IbYZwXYx4IvJz/ZyTcjapIEZLES4gquu0cag==}
     peerDependencies:
-      eslint: 9.31.0
+      eslint: 9.32.0
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2440,7 +2440,7 @@ snapshots:
   '@gar/promisify@1.1.3':
     optional: true
 
-  '@grby/eslint-config@1.0.2(eslint@9.32.0)':
+  '@grby/eslint-config@1.0.3(eslint@9.32.0)':
     dependencies:
       eslint: 9.32.0
 
