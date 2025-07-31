@@ -1,5 +1,11 @@
 # @grby/nlpx
 
+## 1.0.2
+
+### Patch Changes
+
+- 2edd171: fix db query used to update catalog
+
 ## 1.0.1
 
 ### Patch Changes
