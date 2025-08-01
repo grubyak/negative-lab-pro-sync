@@ -1,5 +1,11 @@
 # @grby/nlpx
 
+## 1.0.3
+
+### Patch Changes
+
+- e1f420b: update usage, readme, shift files
+
 ## 1.0.2
 
 ### Patch Changes
