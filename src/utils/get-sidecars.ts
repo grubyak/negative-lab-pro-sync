@@ -1,10 +1,10 @@
-import { CONSTANTS } from "../commons/constants";
+import { CONSTANTS } from "../constants";
 import { getGeneralEntries } from "../db/queries/get-general-entries";
 import { getPhoto } from "../db/queries/get-photo";
 import { getPhotoAdjustments } from "../db/queries/get-photo-adjustments";
 import { getPhotoIdList } from "../db/queries/get-photo-id-list";
 import type { DB, Sidecar } from "../types";
-import { getPhotoPath } from "../utils/get-photo-path";
+import { getPhotoPath } from "./get-photo-path";
 
 const getSidecars = (db: DB) => {
   const result: Record<string, Sidecar> = {};

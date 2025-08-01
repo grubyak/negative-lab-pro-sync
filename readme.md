@@ -44,7 +44,7 @@ $ nlpx --update-sidecar --catalog=<path> [--go] [--verbose] [--all]
 $ nlpx --update-catalog --catalog=<path> [--go] [--verbose]
 ```
 
-### sync: catalog -> sidecars
+### sync: catalog → sidecars
 
 ```zsh
 # close lightroom to ensure all adjustments are written to the catalog
@@ -63,7 +63,7 @@ aaabbbccc.CR3
 aaabbbccc.nlpx.json
 ```
 
-### sync: sidecars -> catalog
+### sync: sidecars → catalog
 
 ```zsh
 # make a copy of your catalog and keep negative lab pro plugin closed!

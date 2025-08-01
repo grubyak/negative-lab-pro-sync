@@ -1,7 +1,7 @@
 import { and, eq } from "drizzle-orm";
-import { agPhotoPropertySpec, agSearchablePhotoProperty } from "../../schema";
 import type { DB, GeneralEntries, Photo } from "../../types";
 import { getPhotoId } from "../queries/get-photo-id";
+import { agPhotoPropertySpec, agSearchablePhotoProperty } from "../schema";
 
 const updateGeneralEntries = (db: DB, photo: Photo, general: GeneralEntries, go: boolean) => {
   const photoId = getPhotoId(db, photo);
@@ -35,7 +35,7 @@ const updateGeneralEntries = (db: DB, photo: Photo, general: GeneralEntries, go:
       if (existing.internalValue === value) {
         console.debug(`  - unchanged "${key}" (${value})`);
       } else {
-        console.debug(`  - updating "${key}": "${existing.internalValue}" -> "${value}"`);
+        console.debug(`  - updating "${key}": "${existing.internalValue}" → "${value}"`);
 
         if (go) {
           db.update(agSearchablePhotoProperty)
