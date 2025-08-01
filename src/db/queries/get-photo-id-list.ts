@@ -1,7 +1,7 @@
 import { and, eq, like } from "drizzle-orm";
-import { CONSTANTS } from "../../commons/constants";
-import { adobeImages, agLibraryFile, agPhotoPropertySpec, agSearchablePhotoProperty } from "../../schema";
+import { CONSTANTS } from "../../constants";
 import type { DB } from "../../types";
+import { adobeImages, agLibraryFile, agPhotoPropertySpec, agSearchablePhotoProperty } from "../schema";
 
 const getPhotoIdList = (db: DB) =>
   db

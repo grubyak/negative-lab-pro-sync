@@ -1,6 +1,6 @@
 import { readdir } from "fs/promises";
 import { join } from "path";
-import { CONSTANTS } from "../commons/constants";
+import { CONSTANTS } from "../constants";
 
 const getCurrentDirSidecars = async () => {
   const dir = process.cwd();

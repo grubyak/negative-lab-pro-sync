@@ -1,7 +1,7 @@
 import { and, eq, like } from "drizzle-orm";
-import { CONSTANTS } from "../../commons/constants";
-import { agPhotoPropertySpec, agSearchablePhotoProperty } from "../../schema";
+import { CONSTANTS } from "../../constants";
 import type { DB, GeneralEntries, GeneralEntriesKey } from "../../types";
+import { agPhotoPropertySpec, agSearchablePhotoProperty } from "../schema";
 
 const getGeneralEntries = (db: DB, id: number) =>
   db

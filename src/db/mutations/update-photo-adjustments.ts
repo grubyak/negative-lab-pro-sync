@@ -1,9 +1,9 @@
 import { eq } from "drizzle-orm";
-import { adobeImages, agLibraryFile, agPhotoProperty } from "../../schema";
 import type { AdjustmentsEntries, AdjustmentsGroup, DB, Photo } from "../../types";
 import { getGroupCategory } from "../../utils/get-group-category";
 import { lua } from "../../utils/lua";
 import { getPhotoId } from "../queries/get-photo-id";
+import { adobeImages, agLibraryFile, agPhotoProperty } from "../schema";
 
 const updatePhotoAdjustments = (db: DB, photo: Photo, adjustments: AdjustmentsEntries, go: boolean) => {
   const photoId = getPhotoId(db, photo);

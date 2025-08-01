@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
-import { adobeImages, agLibraryFile, agLibraryFolder, agLibraryRootFolder } from "../../schema";
 import type { DB, Photo } from "../../types";
+import { adobeImages, agLibraryFile, agLibraryFolder, agLibraryRootFolder } from "../schema";
 
 const getPhoto = (db: DB, id: number) =>
   db
